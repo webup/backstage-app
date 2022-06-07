@@ -2,8 +2,7 @@
 FROM node:16-bullseye-slim AS packages
 
 WORKDIR /app
-COPY package.json ./
-# COPY yarn.lock ./
+COPY package.json yarn.lock ./
 
 COPY packages packages
 
