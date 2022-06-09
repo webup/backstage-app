@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI (Production)
 
 on:
   push:
@@ -32,5 +32,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          file: Dockerfile.prod
           push: true
-          tags: zhanghaili/backstage:latest,zhanghaili/backstage:dev
+          tags: zhanghaili/backstage:1.2.0
