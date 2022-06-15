@@ -71,3 +71,12 @@ proxy:
     allowedMethods: ['GET']
     headers:
       PRIVATE-TOKEN: ${GITLAB_TOKEN}
+
+catalog:
+  providers:
+    gitlab:
+      service:
+        host: gitlab.uisee.ai # Identifies one of the hosts set up in the integrations
+        branch: develop # Optional. Uses `master` as default
+        group: cloud/service # Group and subgroup (if needed) to look for repositories
+        entityFilename: catalog-info.yaml # Optional. Defaults to `catalog-info.yaml`
