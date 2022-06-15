@@ -55,6 +55,12 @@ backend:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+
+integrations:
+  gitlab:
+    - host: gitlab.uisee.ai
+      token: ${GITLAB_TOKEN}
+      apiBaseUrl: https://gitlab.uisee.ai/api/v4
