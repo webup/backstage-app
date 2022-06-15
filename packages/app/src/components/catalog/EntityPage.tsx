@@ -67,6 +67,15 @@ import {
   RELATION_PART_OF,
   RELATION_PROVIDES_API,
 } from '@backstage/catalog-model';
+import { 
+  isGitlabAvailable, 
+  EntityGitlabContent, 
+  EntityGitlabLanguageCard, 
+  EntityGitlabContributorsCard, 
+  EntityGitlabMergeRequestsTable, 
+  EntityGitlabMergeRequestStatsCard, 
+  EntityGitlabPipelinesTable 
+} from '@loblaw/backstage-plugin-gitlab';
 
 const cicdContent = (
   // This is an example of how you can implement your company's logic in entity page.
@@ -131,6 +140,18 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+
+    <EntitySwitch>
+      <EntitySwitch.Case if={isGitlabAvailable}>
+        <Grid item md={6}>
+          <EntityGitlabContributorsCard />
+          <EntityGitlabLanguageCard />
+          <EntityGitlabMergeRequestStatsCard />
+          <EntityGitlabPipelinesTable />
+          <EntityGitlabMergeRequestsTable />
+        </Grid> 
+      </EntitySwitch.Case>
+    </EntitySwitch>
   </Grid>
 );
 
@@ -168,6 +189,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/docs" title="Docs">
       <EntityTechdocsContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route if={isGitlabAvailable} path="/gitlab" title="Gitlab">
+      <EntityGitlabContent />
     </EntityLayout.Route>
   </EntityLayout>
 );
