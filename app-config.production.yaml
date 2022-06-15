@@ -64,3 +64,10 @@ integrations:
     - host: gitlab.uisee.ai
       token: ${GITLAB_TOKEN}
       apiBaseUrl: https://gitlab.uisee.ai/api/v4
+
+proxy:
+  '/gitlabci':
+    target: 'https://gitlab.uisee.ai/api/v4'
+    allowedMethods: ['GET']
+    headers:
+      PRIVATE-TOKEN: ${GITLAB_TOKEN}
