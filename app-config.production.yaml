@@ -73,6 +73,9 @@ proxy:
       PRIVATE-TOKEN: ${GITLAB_TOKEN}
 
 catalog:
+  rules: 
+    - allow: [Component, API, Location, Template, System, Group, User, Resource, Domain]
+    
   providers:
     gitlab:
       service:
