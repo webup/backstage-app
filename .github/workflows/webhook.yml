@@ -3,7 +3,7 @@ name: Webhook CI
 on: [push, pull_request]
 
 jobs:
-  pull_request_ci:
+  push_and_pull_request_ci:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
     steps:
@@ -14,50 +14,50 @@ jobs:
           headers: ''
           body: |
             {
-              'msg_type': 'interactive',
-              'card': {
-                'config': {
-                  'wide_screen_mode': true,
-                  'enable_forward': true
+              "msg_type": "interactive",
+              "card": {
+                "config": {
+                  "wide_screen_mode": true,
+                  "enable_forward": true
                 },
-                'header': {
-                  'title': {
-                    'content': 'Backstage-app Triggered ${{github.event_name}}',
-                    'tag': 'plain_text'
+                "header": {
+                  "title": {
+                    "content": "Backstage-app Triggered ${{github.event_name}}",
+                    "tag": "plain_text"
                   },
-                  'template': 'turquoise'
+                  "template": "turquoise"
                 },
-                'elements': [
+                "elements": [
                   {
-                    'tag': 'note',
-                    'elements': [
+                    "tag": "note",
+                    "elements": [
                       {
-                        'tag': 'lark_md',
-                        'content': 'branch:${{github.ref_name}}'
+                        "tag": "lark_md",
+                        "content": "branch:${{github.ref_name}}"
                       }
                     ]
                   },
-                  { 'tag': 'hr' },
+                  { "tag": "hr" },
                   {
-                    'tag': 'note',
-                    'elements': [
+                    "tag": "note",
+                    "elements": [
                       {
-                        'tag': 'lark_md',
-                        'content': '${{github.head_ref}}'
+                        "tag": "lark_md",
+                        "content": "${{github.head_ref}}"
                       }
                     ]
                   },
                   {
-                    'tag': 'action',
-                    'actions': [
+                    "tag": "action",
+                    "actions": [
                       {
-                        'tag': 'button',
-                        'text': {
-                          'tag': 'plain_text',
-                          'content': '查看详情'
+                        "tag": "button",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "查看 PR"
                         },
-                        'type': 'default',
-                        url: '${{github.head_ref}}'
+                        "type": "default",
+                        url: "${{github.head_ref}}"
                       }
                     ]
                   }
