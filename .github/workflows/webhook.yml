@@ -31,7 +31,7 @@ jobs:
                   "tag": "note",
                   "elements": [{
                     "tag": "lark_md",
-                    "content": "branch:${{github.ref_name}}"
+                    "content": "branch: ${{github.ref_name}}"
                   }]
                 }, {
                   "tag": "hr"
@@ -39,7 +39,7 @@ jobs:
                   "tag": "note",
                   "elements": [{
                     "tag": "lark_md",
-                    "content": "content2"
+                    "content": "${{github.head_ref}}"
                   }]
                 }]
               }
