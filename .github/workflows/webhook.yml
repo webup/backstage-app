@@ -21,11 +21,11 @@ jobs:
                   "enable_forward": true
                 },
                 "header": {
-                  "title": {
-                    "content": "push",
-                    "tag": "plain_text"
-                  },
-                  "template": "blue"
+                    "title": {
+                        "content": "Backstage-app ${{github.event_name}} Triggered",
+                        "tag": "plain_text"
+                    },
+                    "template": "turquoise"
                 },
                 "elements": [{
                   "tag": "note",
