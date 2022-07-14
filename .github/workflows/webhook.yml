@@ -12,4 +12,35 @@ jobs:
         with:
           url: ${{ secrets.BACKSTAGE_WEBHOOK_URL }}
           headers: ''
-          body: '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":true,"enable_forward":true},"header":{"title":{"content":"push","tag":"plain_text"},"template":"blue"},"elements":[{"tag":"note","elements":[{"tag":"lark_md","content":"content"}]},{"tag":"hr"},{"tag":"note","elements":[{"tag":"lark_md","content":"content2"}]}]}}'
+          body: |
+            {
+              "msg_type": "interactive",
+              "card": {
+                "config": {
+                  "wide_screen_mode": true,
+                  "enable_forward": true
+                },
+                "header": {
+                  "title": {
+                    "content": "push",
+                    "tag": "plain_text"
+                  },
+                  "template": "blue"
+                },
+                "elements": [{
+                  "tag": "note",
+                  "elements": [{
+                    "tag": "lark_md",
+                    "content": "content"
+                  }]
+                }, {
+                  "tag": "hr"
+                }, {
+                  "tag": "note",
+                  "elements": [{
+                    "tag": "lark_md",
+                    "content": "content2"
+                  }]
+                }]
+              }
+            }
