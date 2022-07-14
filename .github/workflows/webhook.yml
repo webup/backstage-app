@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   pull_request_ci:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
     steps:
       - name: Webhook to gitlab
         uses: joelwmale/webhook-action@master
@@ -54,7 +54,7 @@ jobs:
                         'tag': 'button',
                         'text': {
                           'tag': 'plain_text',
-                          'content': '查看 PR'
+                          'content': '查看详情'
                         },
                         'type': 'default',
                         url: '${{github.head_ref}}'
