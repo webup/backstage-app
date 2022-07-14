@@ -22,7 +22,7 @@ jobs:
                 },
                 "header": {
                     "title": {
-                        "content": "Backstage-app ${{github.event_name}} Triggered",
+                        "content": "Backstage-app ${{github.event_name}} triggered",
                         "tag": "plain_text"
                     },
                     "template": "turquoise"
@@ -31,7 +31,7 @@ jobs:
                   "tag": "note",
                   "elements": [{
                     "tag": "lark_md",
-                    "content": "content"
+                    "content": "branch:${{github.ref_name}}"
                   }]
                 }, {
                   "tag": "hr"
