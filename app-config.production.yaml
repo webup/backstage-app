@@ -53,11 +53,17 @@ backend:
 # and an external cloud storage when deploying TechDocs for production use-case.
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 techdocs:
-  builder: 'local' # Alternatives - 'external'
-  generator:
-    runIn: 'local' # Alternatives - 'local'
+  builder: 'external' # Alternatives - 'external'
   publisher:
-    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    type: 'awsS3' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    awsS3:
+      bucketName: 'backstage-techdocs'
+      bucketRootPath: '/'
+      credentials:
+          accessKeyId: '${MINIO_ACCESSKEY}'
+          secretAccessKey: '${MINIO_SECRETKEY}'
+      endpoint: 'http://${MINIO_HOST}:${MINIO_PORT}'
+      s3ForcePathStyle: true
 
 integrations:
   gitlab:
