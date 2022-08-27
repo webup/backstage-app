@@ -1,6 +1,6 @@
 {
-  "name": "root",
-  "version": "1.0.0",
+  "name": "ubs",
+  "version": "0.2.0",
   "private": true,
   "engines": {
     "node": "14 || 16"
