@@ -34,4 +34,4 @@ jobs:
           context: .
           file: Dockerfile.prod
           push: true
-          tags: zhanghaili/backstage:0.2.0-bs.1.3.1
+          tags: zhanghaili/backstage:0.2.1-bs.1.5.0
