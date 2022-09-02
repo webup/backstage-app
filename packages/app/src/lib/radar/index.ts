@@ -9,7 +9,7 @@ import {
 import entries from './entry';
 
 export class TechRadar implements TechRadarApi {
-  async load(id?: string): Promise<TechRadarLoaderResponse> {
+  async load(): Promise<TechRadarLoaderResponse> {
     const rings = new Array<RadarRing>();
     rings.push({ id: 'adopt', name: 'ADOPT', color: '#93c47d' });
     rings.push({ id: 'trial', name: 'TRIAL', color: '#93d2c2' });
