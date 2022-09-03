@@ -124,7 +124,23 @@ export default [
     id: 'umi',
     title: 'UmiJS',
     quadrant: 'languages',
-    description: '企业级前端开发框架',
+    description: 'Pluggable enterprise-level react application framework',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'adopt',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://qiankun.umijs.org/',
+    key: 'qiankun',
+    id: 'qiankun',
+    title: 'qiankun',
+    quadrant: 'languages',
+    description:
+      'Probably the most complete micro-frontends solution you ever met',
   },
   {
     timeline: [
@@ -246,6 +262,37 @@ export default [
         date: new Date('2022-10-01'),
       },
     ],
+    url: 'https://en.wikipedia.org/wiki/Flask_(web_framework)',
+    key: 'flask',
+    id: 'flask',
+    title: 'Flask',
+    quadrant: 'languages',
+    description: 'Flask is a micro web framework written in Python.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'assess',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://fastapi.tiangolo.com/',
+    key: 'fastapi',
+    id: 'fastapi',
+    title: 'FastAPI',
+    quadrant: 'languages',
+    description:
+      'FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'adopt',
+        date: new Date('2022-10-01'),
+      },
+    ],
     url: 'https://gin-gonic.com/',
     key: 'gin',
     id: 'gin',
@@ -269,5 +316,37 @@ export default [
     quadrant: 'languages',
     description:
       'go-zero is a web and rpc framework with many built-in engineering best practices.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'hold',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://en.wikipedia.org/wiki/Celery_(software)',
+    key: 'celery',
+    id: 'celery',
+    title: 'Celery',
+    quadrant: 'languages',
+    description:
+      'Celery is an open source asynchronous task queue or job queue which is based on distributed message passing.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'assess',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://github.com/robinhood/faust',
+    key: 'faust',
+    id: 'faust',
+    title: 'Faust',
+    quadrant: 'languages',
+    description:
+      'Faust is a stream processing library, porting the ideas from Kafka Streams to Python.',
   },
 ];

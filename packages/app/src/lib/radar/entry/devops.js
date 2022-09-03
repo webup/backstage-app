@@ -86,6 +86,22 @@ export default [
         date: new Date('2022-10-01'),
       },
     ],
+    url: 'https://github.com/kubernetes/test-infra/tree/master/prow',
+    key: 'prow',
+    id: 'prow',
+    title: 'Prow',
+    quadrant: 'devops',
+    description:
+      'Prow is a Kubernetes based CI/CD system. Jobs can be triggered by various types of events and report their status to many different services.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'assess',
+        date: new Date('2022-10-01'),
+      },
+    ],
     url: 'https://kubevela.io/',
     key: 'kubevela',
     id: 'kubevela',
@@ -203,5 +219,36 @@ export default [
     quadrant: 'devops',
     description:
       'Install Kubernetes/K3s only, both Kubernetes/K3s and KubeSphere, and related cloud-native add-ons, it supports all-in-one, multi-node, and HA',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'assess',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://www.devstream.io/',
+    key: 'devstream',
+    id: 'devstream',
+    title: 'DevStream',
+    quadrant: 'devops',
+    description: 'Your DevOps Toolchain Manager',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'trial',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://www.sonarqube.org/',
+    key: 'sonarqube',
+    id: 'sonarqube',
+    title: 'SonarQube',
+    quadrant: 'devops',
+    description:
+      'SonarQube empowers all developers to write cleaner and safer code.',
   },
 ];

@@ -119,6 +119,22 @@ export default [
         date: new Date('2022-10-01'),
       },
     ],
+    url: 'https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol',
+    key: 'amqp',
+    id: 'amqp',
+    title: 'AMQP',
+    quadrant: 'protocols',
+    description:
+      'The Advanced Message Queuing Protocol (AMQP) is an open standard application layer protocol for message-oriented middleware.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'hold',
+        date: new Date('2022-10-01'),
+      },
+    ],
     url: 'https://en.wikipedia.org/wiki/Constrained_Application_Protocol',
     key: 'coap',
     id: 'coap',

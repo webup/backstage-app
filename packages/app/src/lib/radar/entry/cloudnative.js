@@ -34,6 +34,22 @@ export default [
   {
     timeline: [
       {
+        moved: 0,
+        ringId: 'adopt',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://k3s.io/',
+    key: 'k3s',
+    id: 'k3s',
+    title: 'K3s',
+    quadrant: 'cloudnative',
+    description:
+      'The certified Kubernetes distribution built for IoT & Edge computing',
+  },
+  {
+    timeline: [
+      {
         moved: 1,
         ringId: 'adopt',
         date: new Date('2022-10-01'),
@@ -211,6 +227,22 @@ export default [
     timeline: [
       {
         moved: 0,
+        ringId: 'assess',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://flink.apache.org/',
+    key: 'flink',
+    id: 'flink',
+    title: 'Flink',
+    quadrant: 'cloudnative',
+    description:
+      'Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
         ringId: 'adopt',
         date: new Date('2022-10-01'),
       },
@@ -301,6 +333,22 @@ export default [
     quadrant: 'cloudnative',
     description:
       'Cloud-native MySQL database for unlimited scalability and performance.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'assess',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://clickhouse.com/',
+    key: 'clickhouse',
+    id: 'clickhouse',
+    title: 'ClickHouse',
+    quadrant: 'cloudnative',
+    description:
+      'ClickHouse’s performance exceeds all other column-oriented database management systems.',
   },
   {
     timeline: [
@@ -444,6 +492,22 @@ export default [
     title: 'Crane',
     quadrant: 'cloudnative',
     description:
-      'Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.',
+      'Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters. The goal is not only help user to manage cloud cost easier but also ensure the quality of applications.Crane is a FinOps Platform for Cloud Resource Analytics and Economics in Kubernetes clusters.',
+  },
+  {
+    timeline: [
+      {
+        moved: 0,
+        ringId: 'trial',
+        date: new Date('2022-10-01'),
+      },
+    ],
+    url: 'https://openkruise.io/',
+    key: 'kruise',
+    id: 'kruise',
+    title: 'OpenKruise',
+    quadrant: 'cloudnative',
+    description:
+      'OpenKruise is an extended component suite for Kubernetes, which mainly focuses on application automations, such as deployment, upgrade, ops and availability protection.',
   },
 ];
