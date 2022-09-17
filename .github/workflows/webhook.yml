@@ -1,0 +1,135 @@
+name: Webhook CI
+
+on: [push, pull_request]
+
+jobs:
+  pull_request:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: call webhook
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.BACKSTAGE_WEBHOOK_URL }}
+          headers: ''
+          body: |
+            {
+              "msg_type": "interactive",
+              "card": {
+                "config": {
+                  "wide_screen_mode": true,
+                  "enable_forward": true
+                },
+                "header": {
+                    "title": {
+                        "content": "Backstage-app ${{ github.event.action }} ${{github.event_name}} triggered from ${{github.actor}}",
+                        "tag": "plain_text"
+                    },
+                    "template": "turquoise"
+                },
+                "elements": [{
+                  "tag": "note",
+                  "elements": [{
+                    "tag": "lark_md",
+                    "content": "🎯 Branch: ${{ github.head_ref }} 👉 ${{ github.base_ref }}"
+                  }]
+                }, {
+                  "tag": "hr"
+                }, {
+                  "tag": "note",
+                  "elements": [{
+                    "tag": "lark_md",
+                    "content": "📍 ${{ github.event.pull_request.title }}"
+                  }]
+                }, {
+                  "tag": "div",
+                  "text": {
+                    "tag": "lark_md",
+                    "content": "${{ github.event.pull_request.body || '--' }}"
+                  }
+                }, {
+                  "tag": "action",
+                  "actions": [
+                    {
+                      "tag": "button",
+                      "text": {
+                        "tag": "plain_text",
+                        "content": "查看 PR"
+                      },
+                      "type": "primary",
+                      "url": "${{ github.event.pull_request.html_url }}"
+                    },
+                    {
+                      "tag": "button",
+                      "text": {
+                        "tag": "plain_text",
+                        "content": "查看项目"
+                      },
+                      "type": "default",
+                      "url": "${{ github.event.pull_request.head.repo.html_url }}"
+                    }
+                  ]
+                }]
+              }
+            }
+  push:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: call webhook
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.BACKSTAGE_WEBHOOK_URL }}
+          headers: ''
+          body: |
+            {
+              "msg_type": "interactive",
+              "card": {
+                "config": {
+                  "wide_screen_mode": true,
+                  "enable_forward": true
+                },
+                "header": {
+                    "title": {
+                        "content": "Backstage-app ${{github.event_name}} triggered from ${{github.actor}}",
+                        "tag": "plain_text"
+                    },
+                    "template": "blue"
+                },
+                "elements": [{
+                  "tag": "note",
+                  "elements": [{
+                    "tag": "lark_md",
+                    "content": "🎯 Branch: ${{github.ref_name}}"
+                  }]
+                }, {
+                  "tag": "hr"
+                }, {
+                  "tag": "div",
+                  "text": {
+                    "tag": "lark_md",
+                    "content": "${{ github.event.head_commit.message }}"
+                  }
+                }, 
+                {
+                  "tag": "note",
+                  "elements": [{
+                    "tag": "lark_md",
+                    "content": "👉 View [View Commit](${{ github.event.compare }}) by *${{github.actor}}*"
+                  }]
+                }, {
+                  "tag": "action",
+                  "actions": [
+                    {
+                      "tag": "button",
+                      "text": {
+                        "tag": "plain_text",
+                        "content": "查看项目"
+                      },
+                      "type": "primary",
+                      "url": "${{ github.event.repository.html_url }}"
+                    }
+                  ]
+                }]
+              }
+            }
