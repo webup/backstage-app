@@ -14,6 +14,7 @@ metadata:
   name: example-website
   annotations:
     gitlab.com/project-id: '874'
+    goharbor.io/repository-slug: cloud/fo-console-map
 spec:
   type: service
   lifecycle: experimental
