@@ -78,6 +78,11 @@ proxy:
     headers:
       PRIVATE-TOKEN: ${GITLAB_TOKEN}
 
+harbor:
+  baseUrl: ${HARBOR_URL}
+  username: ${HARBOR_USERNAME}
+  password: ${HARBOR_PASSWORD}
+
 catalog:
   rules: 
     - allow: [Component, API, Location, Template, System, Group, User, Resource, Domain]

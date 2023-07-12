@@ -76,6 +76,11 @@ import {
   EntityGitlabMergeRequestStatsCard, 
   EntityGitlabPipelinesTable 
 } from '@loblaw/backstage-plugin-gitlab';
+import {
+  HarborPage,
+  HarborWidget,
+  isHarborAvailable,
+} from '@bestsellerit/backstage-plugin-harbor';
 
 const cicdContent = (
   // This is an example of how you can implement your company's logic in entity page.
@@ -152,6 +157,14 @@ const overviewContent = (
         </Grid> 
       </EntitySwitch.Case>
     </EntitySwitch>
+
+    <EntitySwitch>
+      <EntitySwitch.Case if={isHarborAvailable}>
+        <Grid item md={6} xs={12}>
+          <HarborWidget />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
   </Grid>
 );
 
@@ -193,6 +206,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route if={isGitlabAvailable} path="/gitlab" title="Gitlab">
       <EntityGitlabContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/harbor" title="Harbor" if={isHarborAvailable}>
+      <HarborPage />
     </EntityLayout.Route>
   </EntityLayout>
 );
