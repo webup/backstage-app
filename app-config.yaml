@@ -79,7 +79,7 @@ scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 harbor:
-  baseUrl: https://cloud-reg.uisee.com
+  baseUrl: ${HARBOR_URL}
   username: ${HARBOR_USERNAME}
   password: ${HARBOR_PASSWORD}
 
