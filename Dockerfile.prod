@@ -17,10 +17,10 @@ FROM node:16-bullseye-slim AS build
 WORKDIR /app
 COPY --from=packages /app .
 
-# install sqlite3 dependencies
-# RUN apt-get update && \
-#   apt-get install -y --no-install-recommends libsqlite3-dev python3 build-essential && \
-#   yarn config set python /usr/bin/python3
+# install python and build essentials
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends python3 build-essential && \
+  yarn config set python /usr/bin/python3
 
 RUN yarn install --frozen-lockfile --network-timeout 600000 && rm -rf "$(yarn cache dir)"
 
