@@ -32,6 +32,7 @@
     "@backstage/plugin-techdocs-react": "^1.0.0",
     "@backstage/plugin-user-settings": "^0.7.4",
     "@backstage/theme": "^0.4.0",
+    "@bestsellerit/backstage-plugin-harbor": "^0.3.1",
     "@loblaw/backstage-plugin-gitlab": "^0.1.23",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
